@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Shalom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Agenda tu turno</h1>
+
+    <form id="appointmentForm">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" required>
+
+        <label for="phone">Teléfono:</label>
+        <input type="tel" id="phone" required>
+
+        <label for="service">Servicio:</label>
+        <select id="service" required>
+            <option value="Corte">Corte</option>
+            <option value="Corte con barba">Corte con barba</option>
+            <option value="Solo barba">Solo barba</option>
+            <option value="Solo marcada de corte">Solo marcada de corte</option>
+        </select>
+
+        <label for="date">Fecha:</label>
+        <input type="date" id="date" required>
+
+        <label for="time">Hora:</label>
+        <select id="time" required></select>
+
+        <button type="submit">Agendar</button>
+    </form>
+
+    <p id="notification" class="hidden">¡Turno agendado con éxito!</p>
+
+    <h2>Administrador</h2>
+    <input type="password" id="adminPassword" placeholder="Contraseña de administrador">
+    <button id="adminLoginBtn">Iniciar sesión</button>
+
+    <div id="appointmentsSection" class="hidden">
+        <h2>Turnos Agendados</h2>
+        <ul id="appointmentsList"></ul>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"></script>
+
+    <!-- Tu código de la app -->
+    <script src="app.js"></script>
+
+</body>
+</html>
